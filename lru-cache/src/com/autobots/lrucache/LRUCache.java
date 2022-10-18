@@ -49,10 +49,7 @@ public class LRUCache {
 
     public void put(String key, String value){
 
-        if(cache.containsKey(key))
-            cache.put(key, new Node(key, value));
-
-        if(size >= capacity){
+       if(size >= capacity){
             Node tailNode = popNodeFromTailOfQueue();
             cache.remove(tailNode.getKey());
         }
